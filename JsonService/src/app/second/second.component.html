@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-7">
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NUMBER</th>
+            <th>NAME</th>
+            <th>DELETE</th>
+            <th>EDIT</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let i of table'>
+            <td>{{i.id}}</td>
+            <td>{{i.num}}</td>
+            <td>{{i.name}}</td>
+            <td><button class="btn btn-danger" (click)="delete(i)">DELETE</button></td>
+            <td><button class="btn btn-success" (click)="edit(i)">EDIT</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="col-sm-5">
+    <form #myform=ngForm>
+        ID:
+        <input type="text" name="id" class="form-control" [(ngModel)]="student.id">
+        Number:
+        <input type="text" name="num" class="form-control" [(ngModel)]="student.num">
+        Name:
+        <input type="text" name="name" class="form-control" [(ngModel)]="student.name">
+        <button class="btn btn-primary" *ngIf="save" (click)="postdetails(myform.value);myform.reset()">Save</button>
+        <button class="btn btn-primary" *ngIf="update" (click)="updatedetails();myform.reset()">Update</button>
+    </form>
+</div>
+</div>
