@@ -1,0 +1,19 @@
+<p>reusable works!</p>
+ <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Phoneno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let i of data'>
+                <td>{{i.firstname}}</td>
+                <td>{{i.lastname}}</td>
+                <td>{{i.phoneno}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
